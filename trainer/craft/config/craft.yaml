@@ -1,0 +1,32 @@
+wandb_opt: False
+
+results_dir: "./exp/"
+mode: "weak_supervision"
+
+train_data:
+  data_dir: '/home/vakidzaci/PycharmProjects/EasyOCR-master/icdar'
+  train_list:
+    - 'ch4_training_images'
+  gt_list:
+    - 'ch4_training_labels'
+test_data:
+  data_dir: '/home/vakidzaci/PycharmProjects/EasyOCR-master/icdar'
+  test_list:
+    - 'ch4_test_images'
+  gt_list:
+    - 'ch4_test_labels'
+
+network:
+  pretrained: False
+  vgg_path: None  # Path to pretrained VGG16 if needed
+
+train:
+  batch_size: 32
+  num_workers: 4
+  max_epoch: 300
+  learning_rate: 0.001
+  ckpt_dir: './checkpoints'  # Directory to save checkpoints
+
+optimizer:
+  type: 'Adam'
+  weight_decay: 0.0005
